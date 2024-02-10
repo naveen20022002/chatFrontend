@@ -167,7 +167,7 @@ const Chat = () => {
           </svg>
           <div>{username}</div>
           </span>
-          <button onClick={logout} className='text-sm text-white bg-gray-500 py-2 px-5 rounded-md'>Logouttt</button>
+          <button onClick={logout} className='text-sm text-white bg-gray-500 py-2 px-5 rounded-md'>Logout</button>
         </div>
       </div>
       <div className={'flex flex-col w-full bg-gray-600 sm:w-2/3 p-2 ' + classs2}>
