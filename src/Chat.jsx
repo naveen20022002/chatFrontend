@@ -107,7 +107,7 @@ const Chat = () => {
     axios.get('/people').then(res=>{
       const offlinePeopleArr = res.data
         .filter(p => p._id !== id)
-        .filter(p => !Object.keys(onlinePeople).includes(p._id))
+        .filter(p => !Object.keys(onlinePeople)?.includes(p._id))
       
         const offlinePeople = {};
         offlinePeopleArr.forEach(p=>{
@@ -119,7 +119,7 @@ const Chat = () => {
   },[onlinePeople])
   function selectedUsernameFind(){
     // console.log(offlinePeople[selectedUserId].username || onlinePeopleExclOurUser[selectedUserId].username)
-    return offlinePeople[selectedUserId].username || onlinePeopleExclOurUser[selectedUserId].username
+    return offlinePeople[selectedUserId].username || onlinePeopleExclOurUser[selectedUserId]?.username
   }
 
   useEffect(()=>{
@@ -152,7 +152,7 @@ const Chat = () => {
           </span>
           </div>
         {/* bracket change error '(' to '[' */}
-        {Object.keys(onlinePeopleExclOurUser).map(userId => (
+        {Object.keys(onlinePeopleExclOurUser)?.map(userId => (
           <Contact classname={null} key={userId} id={userId} online={true} username={onlinePeopleExclOurUser[userId]} onClick={()=>setSelectedUserId(userId)} selected={userId === selectedUserId}/>
         ))}
          {Object.keys(offlinePeople).map(userId => (
