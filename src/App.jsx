@@ -4,7 +4,7 @@ import { UserContextProvider } from "./UserContext";
 
 function App() {
 // axios.defaults.baseURL = "http://localhost:4000";
-  axios.defaults.baseURL = "https://chat-application-a4ea.onrender.com";
+  axios.defaults.baseURL = "https://chat-application-0bjs.onrender.com";
 axios.defaults.withCredentials = true;
   return (
     <UserContextProvider> 
