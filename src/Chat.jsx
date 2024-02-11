@@ -24,6 +24,7 @@ const Chat = () => {
   }, []);
 
   function connectToWs(){
+    //changed ws to wss for security due to err 
     const ws = new WebSocket('wss://chat-application-0bjs.onrender.com')
     setWs(ws)
     ws.addEventListener('message', handleMessage)
