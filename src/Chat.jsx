@@ -119,7 +119,7 @@ const Chat = () => {
   },[onlinePeople])
   function selectedUsernameFind(){
     // console.log(offlinePeople[selectedUserId].username || onlinePeopleExclOurUser[selectedUserId].username)
-    return offlinePeople[selectedUserId].username || onlinePeopleExclOurUser[selectedUserId]?.username
+    return offlinePeople[selectedUserId]?.username || onlinePeopleExclOurUser[selectedUserId]?.username
   }
 
   useEffect(()=>{
@@ -153,7 +153,7 @@ const Chat = () => {
           </div>
         {/* bracket change error '(' to '[' */}
         {Object.keys(onlinePeopleExclOurUser)?.map(userId => (
-          <Contact classname={null} key={userId} id={userId} online={true} username={onlinePeopleExclOurUser[userId]} onClick={()=>setSelectedUserId(userId)} selected={userId === selectedUserId}/>
+          <Contact classname={null} key={userId} id={userId} online={true} username={!onlinePeopleExclOurUser[userId] ? "" : onlinePeopleExclOurUser[userId]} onClick={()=>setSelectedUserId(userId)} selected={userId === selectedUserId}/>
         ))}
          {Object.keys(offlinePeople).map(userId => (
           <div onClick={()=>{setClasss("hidden sm:block"); setClasss2("")}}>
