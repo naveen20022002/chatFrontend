@@ -152,8 +152,8 @@ const Chat = () => {
           </span>
           </div>
         {/* bracket change error '(' to '[' */}
-        {Object.keys(onlinePeopleExclOurUser)?.map(userId => (
-          <Contact classname={null} key={userId} id={userId} online={true} username={!onlinePeopleExclOurUser[userId] ? "" : onlinePeopleExclOurUser[userId]} onClick={()=>setSelectedUserId(userId)} selected={userId === selectedUserId}/>
+        {Object.keys(onlinePeopleExclOurUser).map(userId => (
+          <Contact classname={null} key={userId} id={userId} online={true} username={onlinePeopleExclOurUser[userId]} onClick={()=>setSelectedUserId(userId)} selected={userId === selectedUserId}/>
         ))}
          {Object.keys(offlinePeople).map(userId => (
           <div onClick={()=>{setClasss("hidden sm:block"); setClasss2("")}}>
